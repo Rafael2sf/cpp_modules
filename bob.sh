@@ -88,7 +88,7 @@ MAIN="#include <iostream>\n\nint main(void)\n{\n\treturn (0);\n}"
 
 show_usage()
 {
-	echo "Usage: \n\tnew <folder_path> <name>\n\tclass <name>"
+	printf "Usage: \n\tnew <folder_path> <name>\n\tclass <name>\n"
 }
 
 if [ "$1" ] && [ $1 == "new" ]
