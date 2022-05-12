@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafernan <rafernan@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 14:23:22 by rafernan          #+#    #+#             */
-/*   Updated: 2022/05/12 12:44:40 by rafernan         ###   ########.fr       */
+/*   Created: 2022/05/11 15:42:22 by rafernan          #+#    #+#             */
+/*   Updated: 2022/05/12 15:58:48 by rafernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
+#include "Zombie.hpp"
 
-# include <string>
-# include "Contact.hpp"
-
-class PhoneBook 
+int main(void)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook();
+	Zombie	*horde;
+	int		i;
 
-		void	setContact(void);
-		void	getContact(int) const;
-		void	search(void) const;
-	private:
-		Contact	_contacts[8];
-		int		_n;
-};
-
-#endif /* PHONEBOOK_HPP */
+	i = 0;
+	horde = zombieHorde(10, "creep");
+	while (i < 10)
+		horde[i++].announce();
+	delete[] horde;
+	return (0);
+}

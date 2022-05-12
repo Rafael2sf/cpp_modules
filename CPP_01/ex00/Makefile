@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		GlobalBankstersUnited
+NAME	=		zombie
 
 # TERMINAL #
 
@@ -30,8 +30,7 @@ CFLAGS	=		-Wall -Werror -Wextra -std=c++98
 
 # FILES #
 
-SRCS_	=		tests.cpp \
-				Accounts.cpp
+SRCS_	=		main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 
 SRCS	=		$(addprefix $(_SRC), $(SRCS_))
 OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
@@ -39,11 +38,6 @@ OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 # RULES #
 
 all: $(NAME)
-
-diff: $(NAME)
-	@sed 's/[^ ]* //' 19920104_091532.log > original_log
-	@./GlobalBankstersUnited | sed 's/[^ ]* //' > new_log
-	-diff original_log new_log
 
 $(_OBJ)%.o: $(_SRC)%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -66,11 +60,10 @@ $(_SRC):
 
 clean:
 	$(RMV) $(OBJS)
-	$(RMV) original_log new_log
 
 fclean: clean
 	$(RMV) -r $(_OBJ) $(NAME)
 
 re: fclean all
 
-.PHONY: all diff clean fclean re
+.PHONY: all clean fclean re

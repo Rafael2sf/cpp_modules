@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafernan <rafernan@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 14:23:22 by rafernan          #+#    #+#             */
-/*   Updated: 2022/05/12 12:44:40 by rafernan         ###   ########.fr       */
+/*   Created: 2022/05/11 15:25:25 by rafernan          #+#    #+#             */
+/*   Updated: 2022/05/11 15:31:38 by rafernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-# include <string>
-# include "Contact.hpp"
-
-class PhoneBook 
+void randomChump( std::string name )
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook();
-
-		void	setContact(void);
-		void	getContact(int) const;
-		void	search(void) const;
-	private:
-		Contact	_contacts[8];
-		int		_n;
-};
-
-#endif /* PHONEBOOK_HPP */
+	Zombie	zombie = Zombie(name);
+	zombie.announce();
+}

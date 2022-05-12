@@ -40,7 +40,7 @@ OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
 all: $(NAME)
 
 $(_OBJ)%.o: $(_SRC)%.cpp
-	$(CC) $(CF) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):  $(_OBJ) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
