@@ -8,9 +8,9 @@
 class	HumanB
 {
 	public:
-		HumanB( void );
 		~HumanB();
-		HumanB(std::string);
+		HumanB( std::string );
+		void setWeapon( Weapon & );
 		std::string getName( void ) const;
 		void setName( std::string );
 		std::string getType( void ) const;
