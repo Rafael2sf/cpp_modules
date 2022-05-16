@@ -6,7 +6,7 @@
 /*   By: rafernan <rafernan@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:07:49 by rafernan          #+#    #+#             */
-/*   Updated: 2022/05/06 12:26:04 by rafernan         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:45:10 by rafernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ Contact::~Contact()
 
 int	Contact::isValidContact(void) const
 {
-	int	i;
-
 	if (containsAlpha(this->first_name)
 		&& containsAlpha(this->last_name)
 		&& containsAlpha(this->nick_name)

@@ -6,7 +6,7 @@
 /*   By: rafernan <rafernan@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:00:56 by rafernan          #+#    #+#             */
-/*   Updated: 2022/05/06 12:28:56 by rafernan         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:59:10 by rafernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 
-static std::string	strunc(std::string str, int size);
+static std::string	strunc(std::string str, size_t size);
 static std::string	prompt(std::string str);
 
 PhoneBook::PhoneBook(void) : _n(0)
@@ -51,14 +51,14 @@ void PhoneBook::setContact(void)
 
 void PhoneBook::getContact(int index) const
 {
-	if (index < 0 || index >= 8)
+	if (index < 0 || index > 7)
 	{
 		std::cerr << "error: out of range index" << std::endl;
 		return ;
 	}
 	if ((this->_n) <= index)
 	{
-		std::cerr << "error: no such contact" << std::endl;
+		std::cerr << "error: unset contact" << std::endl;
 		return ;
 	}
 	std::cout << "\nfirstname:\t" << (this->_contacts[index].first_name) << ",\n";
@@ -70,9 +70,8 @@ void PhoneBook::getContact(int index) const
 
 void PhoneBook::search(void) const
 {
-	int		i = 0;
-	int		index = -1;
-	char	*tmp;
+	int			i = 0;
+	std::string	tmp;
 
 	std::cout << std::string(45, '_') << std::endl;
 	while (i < (this->_n) && i < 8)
@@ -85,16 +84,15 @@ void PhoneBook::search(void) const
 		std::cout << std::string(45, '-') << std::endl;
 		i++;
 	}
-	tmp = (char *)prompt("index: ").c_str();
-	index = atoi(tmp);
-	if (tmp[0] >= '0' && tmp[0] <= '9' && tmp[1] == '\0')
-		PhoneBook::getContact(index);
+	tmp = prompt("index: ");
+	if (tmp.size() == 1 && tmp.c_str()[0] >= '0' && tmp.c_str()[0] <= '7' && tmp.c_str()[1] == '\0')
+		PhoneBook::getContact(tmp.c_str()[0] - '0');
 	else
-		std::cerr << "error: unrecognized character\n";
+		std::cerr << "error: bad index\n";
 	return ;
 }
 
-static std::string	strunc(std::string str, int size)
+static std::string	strunc(std::string str, size_t size)
 {
 	std::string	tmp;
 

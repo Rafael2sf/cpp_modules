@@ -6,7 +6,7 @@ HumanB::~HumanB()
 HumanB::HumanB( std::string name )
 {
 	(this->_name) = name;
-	(this->_weapon) = nullptr;
+	(this->_weapon) = NULL;
 }
 
 void HumanB::setWeapon ( Weapon & weapon)
@@ -36,6 +36,11 @@ void HumanB::setType( std::string type )
 
 void HumanB::attack( void ) const
 {
-	std::cout << (this->_name) << " attacks with their ";
-	std::cout << (this->_weapon->getType()) << std::endl;
+	if (this->_weapon)
+	{
+		std::cout << (this->_name) << " attacks with their ";
+		std::cout << (this->_weapon->getType()) << std::endl;
+	}
+	else
+		std::cout << (this->_name) << " is unequipped\n";
 }
