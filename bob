@@ -4,7 +4,6 @@
 
 # To fix:
 #	On some shells echo does not replace \? with the respective char
-#	Class functions are not including {} in the .cpp file
 
 # New exercise
 # Run ./helper.sh new <folder_name> <executable_name>
@@ -169,7 +168,7 @@ then
 			if [ "${i:0:1}" == "(" ];
 			then
 				echo "\t\t$2$i;" >> $2.hpp
-				echo "\n$2::$2$i;" >> $2.cpp
+				echo "\n$2::$2$i\n{}" >> $2.cpp
 			elif [ "$(echo "$i" | grep \()" ];
 			then
 				echo "\t\t$i;" >> $2.hpp
@@ -197,7 +196,7 @@ then
 			if [ "${i:0:1}" == "(" ];
 			then
 				echo "\t\t$2$i;" >> $2.hpp
-				echo "\n$2::$2$i;" >> $2.cpp
+				echo "\n$2::$2$i\n{}" >> $2.cpp
 			elif [ "$(echo "$i" | grep \()" ];
 			then
 				echo "\t\t$i;" >> $2.hpp

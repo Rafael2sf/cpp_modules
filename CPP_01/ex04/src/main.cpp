@@ -9,15 +9,21 @@ static int	rcat(std::ifstream &i_fd, std::ofstream &o_fd,
 	std::string	buf, tmp;
 	size_t		index, fstr_len;
 
-	while (!i_fd.eof())
+	while (1)
 	{
 		std::getline(i_fd, tmp);
-		buf.append(tmp + "\n");
+		buf.append(tmp);
+		if (i_fd.eof())
+			break ;
+		buf.append("\n");
 	}
 	fstr_len = fstr.size();
 	while (!buf.empty())
 	{
-		index = buf.find(fstr);
+		if (fstr_len > 0)
+			index = buf.find(fstr);
+		else
+			index = std::string::npos;
 		if (index == buf.npos)
 		{
 			o_fd << buf;
