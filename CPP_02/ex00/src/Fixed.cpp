@@ -27,4 +27,4 @@ void Fixed::setRawBits( int const raw )
 	(this->_value) = raw;
 }
 
-int const Fixed::_mantissa = 8;
+int const Fixed::_bits = 8;

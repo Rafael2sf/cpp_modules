@@ -21,6 +21,16 @@ Fixed::Fixed( Fixed const & ref )
 	(this->_val) = ref.getRawBits();
 }
 
+Fixed Fixed::operator+( Fixed const & ref )
+{
+	return (Fixed(this->toFloat() + ref.toFloat()));
+}
+
+Fixed Fixed::operator-( Fixed const & ref )
+{
+	return (Fixed(this->toFloat() - ref.toFloat()));
+}
+
 Fixed & Fixed::operator=( Fixed const & ref )
 {
 	(this->_val) = ref.getRawBits();
@@ -34,8 +44,7 @@ std::ostream & operator<<( std::ostream & o, Fixed const & ref )
 	o << '.';
 	o << ((ref.getRawBits() & 0xFF) * 1000) / 256;
 	*/
-	o << ref.toFloat();
-	return (o);
+	return (o << ref.toFloat());
 }
 
 int Fixed::getRawBits( void ) const

@@ -14,7 +14,7 @@ class	Fixed
 
 	private:
 		int _value;
-		static int const _mantissa;
+		static int const _bits;
 };
 
 #endif /* FIXED_HPP */

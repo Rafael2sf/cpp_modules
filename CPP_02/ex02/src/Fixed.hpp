@@ -12,12 +12,15 @@ class	Fixed
 		Fixed( int const & );
 		Fixed( float const & );
 		Fixed( Fixed const & );
-		int	getRawBits( void ) const;
-		void setRawBits( int const raw );
 
-		float toFloat( void ) const;
-		int toInt( void ) const;
-		Fixed & operator =( Fixed const & );
+		int		getRawBits( void ) const;
+		void	setRawBits( int const raw );
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
+
+		Fixed & operator=( Fixed const & );
+		Fixed	operator+( Fixed const & );
+		Fixed	operator-( Fixed const & );
 
 	private:
 		int _val;
