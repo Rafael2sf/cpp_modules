@@ -21,6 +21,10 @@ class	Fixed
 		Fixed & operator=( Fixed const & );
 		Fixed	operator+( Fixed const & );
 		Fixed	operator-( Fixed const & );
+		Fixed	operator*( Fixed const & );
+		Fixed	operator/( Fixed const & );
+		Fixed & operator++( void );
+		Fixed	operator++( int );
 
 	private:
 		int _val;

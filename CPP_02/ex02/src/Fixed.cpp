@@ -23,18 +23,42 @@ Fixed::Fixed( Fixed const & ref )
 
 Fixed Fixed::operator+( Fixed const & ref )
 {
-	return (Fixed(this->toFloat() + ref.toFloat()));
+	return (Fixed(this->_val + ref.getRawBits()));
 }
 
 Fixed Fixed::operator-( Fixed const & ref )
 {
-	return (Fixed(this->toFloat() - ref.toFloat()));
+	return (Fixed(this->_val - ref.getRawBits()));
+}
+
+Fixed Fixed::operator*( Fixed const & ref )
+{
+	return (Fixed(this->toFloat() * ref.toFloat()));
+}
+
+Fixed Fixed::operator/( Fixed const & ref )
+{
+	return (Fixed(this->toFloat() / ref.toFloat()));
 }
 
 Fixed & Fixed::operator=( Fixed const & ref )
 {
 	(this->_val) = ref.getRawBits();
 	return (*this);
+}
+
+Fixed & Fixed::operator++( void )
+{
+	(this->_val++);
+	return (*this);
+}
+
+Fixed	Fixed::operator++( int dummy )
+{
+	( void )dummy;
+	Fixed	tmp = (this->toFloat());
+	(this->_val++);
+	return (tmp);
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & ref )

@@ -2,7 +2,8 @@
 #include "Fixed.hpp"
 
 int main(void)
-{;
-	std::cout << "\"" << Fixed(7.25f) - Fixed(4.125f) << "\"\n";
+{	
+	Fixed a = Fixed(5) + Fixed(2);
+	std::cout << a.toFloat();
 	return (0);
 }
