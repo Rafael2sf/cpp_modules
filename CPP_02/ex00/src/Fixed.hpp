@@ -1,6 +1,8 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
+# include <iostream>
+
 class	Fixed
 {
 	public:
@@ -13,7 +15,7 @@ class	Fixed
 		Fixed & operator =( Fixed const & );
 
 	private:
-		int _value;
+		int _val;
 		static int const _bits;
 };
 
