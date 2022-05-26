@@ -1,0 +1,29 @@
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+# include <iostream>
+
+class	ClapTrap
+{
+	public:
+		~ClapTrap();
+		ClapTrap( ClapTrap const & );
+		ClapTrap( std::string const );
+
+		ClapTrap & operator=( ClapTrap const & );
+
+		void	attack( std::string const & );
+		void	takeDamage( unsigned int );
+		void	beRepaired( unsigned int );
+
+	protected:
+		ClapTrap( void );
+		std::string	_name;
+		int	_hp;
+		int	_ep;
+		int	_ad;
+		int _isTired( void );
+		int _isDead( void );
+};
+
+#endif /* CLAPTRAP_HPP */
