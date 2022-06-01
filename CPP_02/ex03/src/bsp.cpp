@@ -1,28 +1,30 @@
 #include "Point.hpp"
 
-/*
-static Fixed	triangle_area(Point & p1, Point & p2, Point & p3)
-{
-	Fixed a = (Fixed((
-		((p1.getX() - p2.getX()) * (p1.getY() - p3.getY()))
-		- ((p1.getX() - p3.getX()) * (p1.getY() - p2.getY()))
-		) / Fixed(2)));
-	return (a >= 0 ? a : a * Fixed(-1));
-}
+static Fixed	pointDistaceFromLine(Point & a, Point & b, Point & p);
 
 bool	bsp(Point & a, Point & b, Point  & c, Point & p)
 {
-	Fixed	a1, a2, a3;
+	Fixed d1, d2;
 
-	if ((p.getX() == a.getX() && p.getY() == a.getY())
-	 	|| (p.getX() == b.getX() && p.getY() == b.getY())
-		|| (p.getX() == c.getX() && p.getY() == c.getY()))
-		return (false);
-	a1 = triangle_area(p, a, b);
-	a2 = triangle_area(p, b, c);
-	a3 = triangle_area(p, c, a);
-	if ((a1 + a2 + a3) == triangle_area(a, b, c))
-		return (true);
-	return (false);
+	d1 = pointDistaceFromLine(a, b, p);
+	d2 = pointDistaceFromLine(a, b, c);
+	if (!((d1 < 0 && d2 < 0) ||	(d1 > 0 && d2 > 0)))
+		return ( false );
+	d1 = pointDistaceFromLine(b, c, p);
+	d2 = pointDistaceFromLine(b, c, a);
+	if (!((d1 < 0 && d2 < 0) ||	(d1 > 0 && d2 > 0)))
+		return ( false );
+	d1 = pointDistaceFromLine(c, a, p);
+	d2 = pointDistaceFromLine(c, a, b);
+	if (!((d1 < 0 && d2 < 0) ||	(d1 > 0 && d2 > 0)))
+		return ( false );
+	return ( true );
 }
-*/
+
+static Fixed	pointDistaceFromLine(Point & a, Point & b, Point & p)
+{
+	return (
+		((p.getX() - a.getX()) * (b.getY() - a.getY()))
+		- ((p.getY() - a.getY()) * (b.getX() - a.getX()))
+	);
+}
