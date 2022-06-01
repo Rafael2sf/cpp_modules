@@ -22,8 +22,6 @@ class	ClapTrap
 		int	_hp;
 		int	_ep;
 		int	_ad;
-		int _isTired( void );
-		int _isDead( void );
 };
 
 #endif /* CLAPTRAP_HPP */

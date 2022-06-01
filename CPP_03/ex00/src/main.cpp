@@ -3,23 +3,17 @@
 
 int main(void)
 {
-	ClapTrap clap_a("CL4P-TP");
+	ClapTrap clap_a("CL4P-TP-21");
+	clap_a.takeDamage(5);
 	clap_a.attack("something");
-
-	ClapTrap clap_b(clap_a);
-	clap_b.takeDamage(5);
-	clap_b.takeDamage(5);
-	clap_b.attack("something");
-
-	std::cout << std::endl << std::endl;
-
+	clap_a.beRepaired(5);
+	clap_a.takeDamage(5);
+	clap_a.beRepaired(0);
+	clap_a.takeDamage(5);
+	clap_a.beRepaired(0);
+	ClapTrap clap_b("CL4P-TP-42");
 	for (int i = 0; i < 10; i++)
-		clap_a.beRepaired(5);
-	clap_a.attack("something");
-
-	std::cout << std::endl << std::endl;
-	
-	ClapTrap clap_c = clap_a;
-	clap_c.beRepaired(5);
+		clap_b.attack("enemy");
+	clap_b.attack("something");
 	return (0);
 }

@@ -16,7 +16,10 @@ Point::Point( Point const & ref )
 
 Point & Point::operator=(Point const & ref)
 {
-	(Fixed)(this->_x) = Fixed(ref._x);
+	Fixed	*x = const_cast <Fixed *> (&this->_x);
+	Fixed	*y = const_cast <Fixed *> (&this->_y);
+	*x = ref._x;
+	*y = ref._y;
 	return (*this);
 }
 

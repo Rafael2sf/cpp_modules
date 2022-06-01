@@ -2,7 +2,10 @@
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap downgraded to ClapTrap" << std::endl;
+	if (this->_name != "")
+		std::cout << "ScavTrap modules removed from " << this->_name << std::endl;
+	else
+		std::cout << "ScavTrap modules removed from Claptrap" << std::endl;
 }
 
 ScavTrap::ScavTrap( void )
@@ -19,13 +22,15 @@ ScavTrap::ScavTrap( ScavTrap const & ref )
 	*this = ref;
 }
 
-ScavTrap::ScavTrap( std::string const name )
+ScavTrap::ScavTrap( std::string const name ): ClapTrap(name)
 {
-	(this->_name) = name;
 	(this->_hp) = 100;
 	(this->_ep) = 50;
 	(this->_ad) = 20;
-	std::cout << "ClapTrap upgraded to ScavTrap as " << this->_name << std::endl;
+	if (this->_name != "")
+		std::cout << "ClapTrap, " << this->_name << ", upgraded with ScavTrap module" << std::endl;
+	else
+		std::cout << "ClapTrap upgraded with ScavTrap module" << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=( ScavTrap const & ref )
@@ -39,17 +44,33 @@ ScavTrap & ScavTrap::operator=( ScavTrap const & ref )
 
 void ScavTrap::attack( std::string const & target )
 {
-	if (this->_isDead() || this->_isTired())
+	if (this->_hp <= 0)
+	{
+		std::cout << this->_name << " is not responding" << std::endl;
 		return ;
+	}
+	if (this->_ep <= 0)
+	{
+		std::cout << this->_name << " is out of fuel" << std::endl;
+		return ;
+	}
 	this->_ep--;
 	std::cout << this->_name << " attacks " << target;
 	std::cout << ", causing " << this->_ad;
-	std::cout << " points of damage" << std::endl;
+	std::cout << " points of damage using Scav Attack" << std::endl;
 }
 
 void ScavTrap::GuardGate( void )
 {
-	if (this->_isDead() || this->_isTired())
+	if (this->_hp <= 0)
+	{
+		std::cout << this->_name << " is not responding" << std::endl;
 		return ;
+	}
+	if (this->_ep <= 0)
+	{
+		std::cout << this->_name << " is out of fuel" << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " is now in Gatekeeper mode" << std::endl;
 }

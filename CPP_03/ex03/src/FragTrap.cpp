@@ -9,7 +9,11 @@ FragTrap::~FragTrap()
 }
 
 FragTrap::FragTrap( void )
-{}
+{
+	std::cout << "Added FragTrap modules" << std::endl;
+	(this->_hp) = 100;
+	(this->_ad) = 30;
+}
 
 FragTrap::FragTrap( FragTrap const & ref )
 {

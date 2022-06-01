@@ -9,7 +9,10 @@ ScavTrap::~ScavTrap()
 }
 
 ScavTrap::ScavTrap( void )
-{}
+{
+	std::cout << "Added ScavTrap modules" << std::endl;
+	(this->_ep) = 50;
+}
 
 ScavTrap::ScavTrap( ScavTrap const & ref )
 {
@@ -28,7 +31,7 @@ ScavTrap::ScavTrap( std::string const name ): ClapTrap(name)
 	(this->_ep) = 50;
 	(this->_ad) = 20;
 	if (this->_name != "")
-		std::cout << this->_name << ", ClapTrap, upgraded with ScavTrap modules" << std::endl;
+		std::cout << "ClapTrap, " << this->_name << ", upgraded with ScavTrap module" << std::endl;
 	else
 		std::cout << "ClapTrap upgraded with ScavTrap module" << std::endl;
 }

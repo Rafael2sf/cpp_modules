@@ -3,11 +3,13 @@
 
 int main(void)
 {
-	Point	a(1, 1);
-	Point	b(1, 4);
-	Point	c(4, 1);
-	Point	p(3, 5);
-
-	std::cout << (bsp(a, b, c, p) == true ? "true" : "false") << std::endl;
+	Fixed a(0);
+	for (int i = 0; i < 32; i++)
+	{
+		a = Fixed(1) + a * Fixed(2);
+		std::cout << a << std::endl;
+	}
+	std::cout << INT32_MAX * 2 << std::endl;
+	//std::cout << (bsp(a, b, c, p) == true ? "true" : "false") << std::endl;
 	return 0;
 }
