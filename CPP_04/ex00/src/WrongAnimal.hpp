@@ -12,10 +12,10 @@ class	WrongAnimal
 		WrongAnimal( WrongAnimal const & );
 		WrongAnimal & operator=( WrongAnimal const & );
 
-		void	makeSound( void ) const;
+		void		makeSound( void ) const;
 		std::string	getType( void ) const;
 	protected:
 		std::string	_type;
 };
 
-#endif /* ANIMAL_HPP */
+#endif /* WRONGANIMAL_HPP */

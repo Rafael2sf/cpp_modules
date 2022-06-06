@@ -35,7 +35,7 @@ int main(void)
 		delete dog;
 		delete cat;
 	}
-	std::cout << std::endl << "~~ [0] ~~" << std::endl;
+	std::cout << std::endl << "~~ [3] ~~" << std::endl;
 	{
 		const WrongAnimal *i = new WrongAnimal();
 		const WrongAnimal *j = new WrongCat();

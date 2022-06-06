@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		bsp
+NAME	=		brains
 
 # TERMINAL #
 
@@ -30,7 +30,7 @@ CFLAGS	=		-Wall -Werror -Wextra -std=c++98
 
 # FILES #
 
-SRCS_	=		main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS_	=		main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 SRCS	=		$(addprefix $(_SRC), $(SRCS_))
 OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
