@@ -9,7 +9,7 @@ class	AMateria
 {
 	public:
 		AMateria( void );
-		~AMateria();
+		virtual ~AMateria();
 		AMateria( AMateria const & );
 		AMateria( std::string const & type );
 		AMateria & operator=( AMateria const & );
@@ -19,7 +19,7 @@ class	AMateria
 		virtual void use( ICharacter & target );
 
 	protected:
-		std::string type;
+		std::string _type;
 };
 
 #endif /* AMATERIA_HPP */

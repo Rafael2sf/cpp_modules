@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		aanimal
+NAME	=		blackmagic
 
 # TERMINAL #
 
@@ -30,7 +30,7 @@ CFLAGS	=		-Wall -Werror -Wextra -std=c++98
 
 # FILES #
 
-SRCS_	=		main.cpp AMateria.cpp Character.cpp
+SRCS_	=		AMateria.cpp MateriaSource.cpp Character.cpp Ice.cpp Cure.cpp main.cpp
 
 SRCS	=		$(addprefix $(_SRC), $(SRCS_))
 OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
