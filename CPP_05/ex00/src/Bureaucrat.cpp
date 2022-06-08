@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( void )
+Bureaucrat::Bureaucrat( void ): _name(""), _grade(150)
 {}
 
 Bureaucrat::~Bureaucrat()
