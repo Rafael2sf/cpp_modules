@@ -78,6 +78,15 @@ bool Form::beSigned( Bureaucrat const & ref )
 	throw Form::GradeTooLowException();
 }
 
+void Form::execute( Bureaucrat const & executor )
+{
+	if (this->_is_signed == false)
+		throw Form::ExecutingNotSignedException();
+	if (executor.getGrade() > this->_execute_grade)
+		throw Form::GradeTooLowException();
+	std::cout << "bureaucrat <" << executor.getName() << "> executed form <" << this->getName() << ">" << std::endl;
+}
+
 std::ostream & operator<<( std::ostream & o, Form const & rhs )
 {
 	o << "form <" << rhs.getName() << "> signed: ";
@@ -97,4 +106,10 @@ const char *Form::GradeTooLowException::what( void ) const throw()
 {
 	std::cout << "form grade too low" << std::endl;
 	return ("invalid grade");
+}
+
+const char *Form::ExecutingNotSignedException::what( void ) const throw()
+{
+	std::cout << "cannot execute a form that is not signed" << std::endl;
+	return ("execution refused");
 }

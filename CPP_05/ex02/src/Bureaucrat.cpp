@@ -42,6 +42,7 @@ void Bureaucrat::incrGrade( void )
 	if ((this->_grade - 1) < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade -= 1;
+	std::cout << this->_name << " has been promoted" << std::endl;
 }
 
 void Bureaucrat::decrGrade( void )
@@ -49,6 +50,7 @@ void Bureaucrat::decrGrade( void )
 	if ((this->_grade + 1) > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade += 1;
+	std::cout << this->_name << " has been demoted" << std::endl;
 }
 
 bool Bureaucrat::signForm( Form & ref )
@@ -63,6 +65,21 @@ bool Bureaucrat::signForm( Form & ref )
 		std::cout  << ref.getName() << "> because his grade is too low" << std::endl;
 		return (false);
 	}
+}
+
+bool Bureaucrat::executeForm( Form & ref )
+{
+	try
+	{
+		ref.execute(*this);
+		return (true);
+	}
+	catch (const std::exception & e)
+	{
+		e.what();
+		return (false);
+	}
+	
 }
 
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs )
