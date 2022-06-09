@@ -5,8 +5,8 @@
 
 int	main( void )
 {
-	Bureaucrat				me("me", 26);
-	Bureaucrat				also_me("alsome", 6);
+	Bureaucrat				me("me", 146);
+	Bureaucrat				also_me("alsome", 138);
 	ShrubberyCreationForm	form("home");
 
 	std::cout << me;

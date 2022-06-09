@@ -36,7 +36,7 @@ Form::Form( Form const & ref )
 Form & Form::operator=( Form const & rhs )
 {
 	( void )rhs;
-	std::cerr << "Sorry, forms are unique!" << std::endl;
+	std::cerr << "Sorry, forms can't be changed!" << std::endl;
 	return (*this);
 }
 

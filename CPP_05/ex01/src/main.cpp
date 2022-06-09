@@ -29,8 +29,10 @@ int	main( void )
 		try { form.beSigned(person); } catch ( const std::exception & e )
 		{ e.what(); }
 		person.incrGrade();
-		form.beSigned(person);
-		form.beSigned(person);
+		try { form.beSigned(person); } catch ( const std::exception & e )
+		{ e.what(); }
+		try { form.beSigned(person); } catch ( const std::exception & e )
+		{ e.what(); }
 	}
 	return (0);
 }

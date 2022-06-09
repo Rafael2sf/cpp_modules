@@ -41,6 +41,8 @@ void Bureaucrat::incrGrade( void )
 	if ((this->_grade - 1) < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade -= 1;
+	std::cout << this->_name << " has been promoted to ";
+	std::cout << this->_grade << " grade" << std::endl;
 }
 
 void Bureaucrat::decrGrade( void )
@@ -48,6 +50,8 @@ void Bureaucrat::decrGrade( void )
 	if ((this->_grade + 1) > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade += 1;
+	std::cout << this->_name << " has been demoted to ";
+	std::cout << this->_grade << " grade" << std::endl;
 }
 
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs )
