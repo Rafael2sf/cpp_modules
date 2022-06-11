@@ -81,7 +81,6 @@ bool Bureaucrat::executeForm( Form & ref )
 		e.what();
 		return (false);
 	}
-	
 }
 
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs )

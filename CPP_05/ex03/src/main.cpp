@@ -12,7 +12,7 @@ int	main( void )
 
 	try 
 	{
-		form = intern.makeForm("presidential pardon", "someone");
+		form = intern.makeForm("test", "someone");
 		bureau.signForm(*form);
 		bureau.executeForm(*form);
 		std::cout << *form;
