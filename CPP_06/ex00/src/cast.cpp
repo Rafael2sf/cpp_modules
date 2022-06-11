@@ -42,6 +42,8 @@ void	float_cast( const std::string & _s )
 	float				f;
 	double				d = strtod(_s.c_str(), NULL);
 
+	std::cout << d << std::endl;
+	(void)d;
 	if (!isdigit(_s[1]))
 	{
 		std::string tmp = _s;
@@ -50,7 +52,7 @@ void	float_cast( const std::string & _s )
 		return ;
 	}
 	if (d > std::numeric_limits<float>::max() 
-		|| d < std::numeric_limits<float>::min())
+		|| d < (std::numeric_limits<float>::max() * -1))
 	{
 		std::cout << "char: Impossible\nint: Impossible\nfloat: Impossible\ndouble: Impossible" << std::endl;
 		return ;
@@ -62,7 +64,9 @@ void	float_cast( const std::string & _s )
 		std::cout << "char: '" << static_cast<char>(f) << '\'' << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	if (static_cast<long>(f) > INT32_MAX || static_cast<long>(f) < INT32_MIN)
+	if ((f > 0 && static_cast<int>(f) < 0)
+		|| f > std::numeric_limits<int>::max() 
+		|| f < std::numeric_limits<int>::min())
 		std::cout << "int: Impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -91,14 +95,15 @@ void	double_cast( const std::string & _s )
 		std::cout << "char: '" << static_cast<char>(d) << '\'' << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	if (static_cast<long>(d) > INT32_MAX || static_cast<long>(d) < INT32_MIN)
+	if (d > std::numeric_limits<int>::max() 
+		|| d < std::numeric_limits<int>::min())
 		std::cout << "int: Impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	if (d > std::numeric_limits<float>::max() 
-		|| d < std::numeric_limits<float>::min())
+		|| d < (std::numeric_limits<float>::max() * -1))
 		std::cout << "float: Impossible" << std::endl;
 	else
-		std::cout << "float: " << static_cast<float>(d) << std::endl;
+	std::cout << "float: " << static_cast<float>(d) << std::endl;
 	std::cout << "double: " << d << std::endl;
 }
