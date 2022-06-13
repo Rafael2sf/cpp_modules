@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		class
+NAME	=		array
 
 # TERMINAL #
 
@@ -30,7 +30,7 @@ CFLAGS	=		-Wall -Werror -Wextra -std=c++98
 
 # FILES #
 
-SRCS_	=		main.cpp Array.cpp
+SRCS_	=		main.cpp
 
 SRCS	=		$(addprefix $(_SRC), $(SRCS_))
 OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))

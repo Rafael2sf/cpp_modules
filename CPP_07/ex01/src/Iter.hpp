@@ -4,13 +4,13 @@
 #include <iostream>
 
 template< typename T >
-void	iter(T *_src, size_t _len, void (*_f)(int , T const & ))
+void	iter(T *_src, size_t _len, void (*_f)( T const & ))
 {
 	size_t	i = 0;
 
 	while (i < _len)
 	{
-		_f(i, _src[i]);
+		_f(_src[i]);
 		i++;
 	}
 }

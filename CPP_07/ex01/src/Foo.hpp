@@ -4,9 +4,9 @@
 #include <iostream>
 
 template < typename T >
-void foo( int _index, T const & _a )
+void foo( T const & _a )
 {
-	std::cout << "[" << _index << "]:\t" << _a << std::endl;
+	std::cout << _a << " ";
 }
 
 #endif /* FOO_HP */
