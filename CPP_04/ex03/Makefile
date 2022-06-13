@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		blackmagic
+NAME	=		interfaces
 
 # TERMINAL #
 

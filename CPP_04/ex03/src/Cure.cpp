@@ -3,23 +3,20 @@
 Cure::Cure( void )
 {
 	(this->_type) = "cure";
-	std::cout << "added Cure magic" << std::endl;
 }
 
 Cure::~Cure()
-{
-	std::cout << "removed Cure magic" << std::endl;
-}
+{}
 
 Cure::Cure( Cure const & ref )
 {
+	(void)ref;
 	this->_type = "cure";
-	*this = ref;
 }
 
 Cure & Cure::operator=( Cure const & rhs )
 {
-	std::cout << "copied " << rhs._type << " materia" << std::endl;
+	(void)rhs;
 	return (*this);
 }
 

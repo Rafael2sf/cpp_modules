@@ -7,7 +7,7 @@ Animal::~Animal()
 
 Animal::Animal( void )
 {
-	this->_type = "Unknow";
+	this->_type = "Unknown";
 	std::cout << "Animal born" << std::endl;
 }
 

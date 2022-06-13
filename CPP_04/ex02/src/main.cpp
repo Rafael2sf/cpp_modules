@@ -6,13 +6,13 @@
 
 int main(void)
 {
-	// Cannot instantiate animal
+	//Cannot instantiate animal
 	// AAnimal a;
-	// AAnimal *a = new AAnimal();
+	// AAnimal *b = new AAnimal();
 
-	AAnimal *a = new Cat();
-	AAnimal *b = new Dog();
-	delete a;
-	delete b;
+	AAnimal *c = new Cat();
+	AAnimal *d = new Dog();
+	delete c;
+	delete d;
 	return (0);
 }

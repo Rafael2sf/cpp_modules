@@ -1,14 +1,10 @@
 #include "AMateria.hpp"
 
 AMateria::AMateria( void )
-{
-	std::cout << "new materia" << std::endl;
-}
+{}
 
 AMateria::~AMateria()
-{
-	std::cout << "lost materia" << std::endl;
-}
+{}
 
 AMateria::AMateria( AMateria const & ref )
 {
@@ -18,7 +14,6 @@ AMateria::AMateria( AMateria const & ref )
 AMateria & AMateria::operator=( AMateria const & ref )
 {
 	(void)ref;
-	std::cout << "copied materia" << std::endl;
 	return (*this);
 }
 

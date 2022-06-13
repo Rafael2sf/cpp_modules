@@ -14,9 +14,6 @@ class	WrongCat: public WrongAnimal
 		WrongCat & operator=( WrongCat const & );
 
 		void		makeSound( void ) const;
-		std::string	getType( void ) const;
-	private:
-		std::string	_type;
 };
 
 #endif /* WRONGCAT_HPP */

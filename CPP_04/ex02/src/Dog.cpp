@@ -24,7 +24,7 @@ Dog & Dog::operator=( Dog const & ref )
 {
 	this->_type = ref._type;
 	for (int i = 0; i < 100; i++)
-		(this->_brain->_ideas)[i] = (ref._brain->_ideas)[i];
+		this->_brain->setIdea(i, ref._brain->getIdea(i));
 	return (*this);
 }
 
@@ -33,32 +33,12 @@ void Dog::makeSound( void ) const
 	std::cout << "** woof woof **" << std::endl;
 }
 
-std::string Dog::getType( void ) const
+bool	Dog::setIdea( int index, std::string idea )
 {
-	return (this->_type);
-}
-
-bool	Dog::setIdea( std::string idea )
-{
-	int	i = 0;
-
-	if (idea == "")
-		return (false);
-	while (i < 100)
-	{
-		if ((this->_brain->_ideas)[i] == "")
-		{
-			(this->_brain->_ideas)[i] = idea;
-			return (true);
-		}
-		i++;
-	}
-	return (false);
+	return (this->_brain->setIdea(index, idea));
 }
 
 std::string	Dog::getIdea( int index )
 {
-	if (index >= 0 && index < 100)
-		return ((this->_brain->_ideas)[index]);
-	return ("");
+	return (this->_brain->getIdea(index));
 }

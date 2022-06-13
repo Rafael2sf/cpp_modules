@@ -5,7 +5,6 @@ Character::Character( void )
 	this->_name = "";
 	for (int i = 0; i < 4; i++)
 		(this->_inv[i]) = 0;
-	std::cout << this->_name << " character is born" << std::endl;
 }
 
 Character::~Character()
@@ -30,7 +29,6 @@ Character::Character( Character const & ref )
 
 Character & Character::operator=( Character const & rhs )
 {
-	std::cout << rhs._name << " character cloned" << std::endl;
 	this->_name = rhs._name;
 	for (int i = 0; i < 4; i++)
 	{
@@ -59,16 +57,26 @@ std::string const &	Character::getName( void ) const
 
 void	Character::unequip( int idx )
 {
-	if (idx < 0 || idx > 3 || (this->_inv)[idx] == 0)
+	if (idx < 0 || idx > 3)
 		return ;
+	if ((this->_inv)[idx] == 0)
+	{
+		std::cout << this->_name << " nothing to unequip at slot " << idx << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " unequipped " << (this->_inv)[idx]->getType() << " materia" << std::endl;
 	(this->_inv)[idx] = 0;
 }
 
 void	Character::use( int idx, ICharacter & target )
 {
-	if (idx < 0 || idx > 3 || (this->_inv)[idx] == 0)
+	if (idx < 0 || idx > 3)
 		return ;
+	if ((this->_inv)[idx] == 0)
+	{
+		std::cout << this->_name << " has no materia on slot " << idx << std::endl;
+		return ;
+	}
 	(this->_inv)[idx]->use(target);
 }
 
@@ -93,4 +101,5 @@ void	Character::equip( AMateria *m )
 			return ;
 		}
 	}
+	std::cout << this->_name << " inventory is full" << std::endl;
 }

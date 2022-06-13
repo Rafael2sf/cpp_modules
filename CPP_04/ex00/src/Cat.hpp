@@ -14,9 +14,6 @@ class	Cat: public Animal
 		Cat & operator=( Cat const & );
 
 		void		makeSound( void ) const;
-		std::string	getType( void ) const;
-	private:
-		std::string	_type;
 };
 
 #endif /* CAT_HPP */

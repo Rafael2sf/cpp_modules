@@ -2,13 +2,13 @@
 
 WrongCat::WrongCat( void )
 {
-	this->_type = "Cat";
+	this->_type = "WrongCat";
 	std::cout << "It's a " << this->_type << std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "Good bye, little cow" << std::endl;
+	std::cout << "Good bye, strange kitty" << std::endl;
 }
 
 WrongCat::WrongCat( WrongCat const & ref )
@@ -25,9 +25,4 @@ WrongCat & WrongCat::operator=( WrongCat const & ref )
 void WrongCat::makeSound( void ) const
 {
 	std::cout << "** meow meow **" << std::endl;
-}
-
-std::string WrongCat::getType( void ) const
-{
-	return (this->_type);
 }

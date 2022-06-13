@@ -13,7 +13,6 @@ class	Cure: public AMateria
 		Cure & operator=( Cure const & );
 		AMateria *clone( void ) const;
 		void use( ICharacter & target );
-
 };
 
 #endif /* CURE_HPP */

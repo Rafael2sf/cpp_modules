@@ -31,14 +31,15 @@ int main(void)
 		Animal	*cat1 = new Cat();
 		tmp = (Cat *)cat1;
 
-		tmp->setIdea("\"A dog is not a cat, or is it ?\"");
-		tmp->setIdea("\"Cat does ** meow meow **, dog does ** woof woof **\"");
+		tmp->setIdea(0, "\"A dog is not a cat, or is it ?\"");
+		tmp->setIdea(1, "\"Cat does ** meow meow **, dog does ** woof woof **\"");
 		std::cout << tmp->getIdea(0) << std::endl;
 		std::cout << tmp->getIdea(1) << std::endl;
 
 		Animal	*cat2 = new Cat(*(Cat *)cat1);
 		tmp = (Cat *)cat2;
 
+		tmp->setIdea(0, "\"I am a animal!\"");
 		std::cout << tmp->getIdea(0) << std::endl;
 		std::cout << tmp->getIdea(1) << std::endl;
 

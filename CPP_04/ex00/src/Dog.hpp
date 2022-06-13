@@ -14,9 +14,6 @@ class	Dog: public Animal
 		Dog & operator=( Dog const & );
 
 		void		makeSound( void ) const;
-		std::string	getType( void ) const;
-	private:
-		std::string	_type;
 };
 
 #endif /* DOG_HPP */

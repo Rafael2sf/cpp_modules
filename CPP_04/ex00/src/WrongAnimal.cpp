@@ -7,7 +7,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal::WrongAnimal( void )
 {
-	this->_type = "wrong";
+	this->_type = "Wrong";
 	std::cout << "Wrong animal born" << std::endl;
 }
 

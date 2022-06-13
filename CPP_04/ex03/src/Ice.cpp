@@ -3,23 +3,20 @@
 Ice::Ice( void )
 {
 	(this->_type) = "ice";
-	std::cout << "added Ice magic" << std::endl;
 }
 
 Ice::~Ice()
-{
-	std::cout << "removed Ice magic" << std::endl;
-}
+{}
 
 Ice::Ice( Ice const & ref )
 {
-	this->_type = "ice";
-	*this = ref;
+	(void)ref;
+	(this->_type) = "ice";
 }
 
 Ice & Ice::operator=( Ice const & rhs )
 {
-	std::cout << "copied " << rhs._type << " materia" << std::endl;
+	(void)rhs;
 	return (*this);
 }
 

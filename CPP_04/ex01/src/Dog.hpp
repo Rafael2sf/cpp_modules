@@ -15,11 +15,9 @@ class	Dog: public Animal
 		Dog & operator=( Dog const & );
 
 		void		makeSound( void ) const;
-		std::string	getType( void ) const;
-		bool		setIdea( std::string idea );
+		bool		setIdea( int index, std::string idea );
 		std::string	getIdea( int index );
 	private:
-		std::string	_type;
 		Brain *		_brain;
 };
 

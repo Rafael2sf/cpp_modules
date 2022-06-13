@@ -2,14 +2,14 @@
 
 MateriaSource::MateriaSource( void )
 {
-	std::cout << "new magic book" << std::endl;
+	std::cout << "new materia source" << std::endl;
 	for (int i = 0; i < 4; i++)
 		(this->_inv)[i] = 0;
 }
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "deleted magic book" << std::endl;
+	std::cout << "deleted materia source" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if ((this->_inv)[i] != 0)
@@ -29,7 +29,6 @@ MateriaSource::MateriaSource( MateriaSource const & ref )
 
 MateriaSource & MateriaSource::operator=( MateriaSource const & rhs )
 {
-	std::cout << "copied magic book" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (rhs._inv[i] != 0)
