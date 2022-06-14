@@ -10,7 +10,7 @@ int	main( int argc, char **argv )
 		return (1);
 	}
 	std::string	input = std::string(argv[1]);
-	std::cout << std::fixed << std::setprecision(2);
+	std::cout << std::fixed << std::setprecision(1);
 	switch (get_type(input))
 	{
 		case TYPE_CHR:

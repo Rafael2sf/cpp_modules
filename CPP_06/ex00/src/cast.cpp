@@ -22,7 +22,7 @@ void	int_cast( const std::string & _s )
 
 	if (len > 10 || l > std::numeric_limits<int>::max() || l < std::numeric_limits<int>::min())
 	{
-		std::cout << "char: Impossible\nint: Impossible\nfloat: Impossible\ndouble: Impossible" << std::endl;
+		std::cout << "input error: int overflow" << std::endl;
 		return ;
 	}
 	i = atoi(_s.c_str());
@@ -42,8 +42,7 @@ void	float_cast( const std::string & _s )
 	float				f;
 	double				d = strtod(_s.c_str(), NULL);
 
-	std::cout << d << std::endl;
-	(void)d;
+	errno = 0;
 	if (!isdigit(_s[1]))
 	{
 		std::string tmp = _s;
@@ -51,10 +50,10 @@ void	float_cast( const std::string & _s )
 		std::cout << "char: Impossible\nint: Impossible\nfloat: " << _s << "\ndouble: " << tmp << std::endl;
 		return ;
 	}
-	if (d > std::numeric_limits<float>::max() 
+	if (errno == ERANGE || d > std::numeric_limits<float>::max() 
 		|| d < (std::numeric_limits<float>::max() * -1))
 	{
-		std::cout << "char: Impossible\nint: Impossible\nfloat: Impossible\ndouble: Impossible" << std::endl;
+		std::cout << "input error: float overflow" << std::endl;
 		return ;
 	}
 	f = strtof(_s.c_str(), NULL);
@@ -86,7 +85,7 @@ void	double_cast( const std::string & _s )
 	}
 	if (errno == ERANGE)
 	{
-		std::cout << "char: Impossible\nint: Impossible\nfloat: Impossible\ndouble: Impossible" << std::endl;
+		std::cout << "input error: double overflow" << std::endl;
 		return ;
 	}
 	if (d > 127.0 || d < 0.0)
@@ -104,6 +103,6 @@ void	double_cast( const std::string & _s )
 		|| d < (std::numeric_limits<float>::max() * -1))
 		std::cout << "float: Impossible" << std::endl;
 	else
-	std::cout << "float: " << static_cast<float>(d) << std::endl;
+		std::cout << "float: " << static_cast<float>(d) << 'f' << std::endl;
 	std::cout << "double: " << d << std::endl;
 }
