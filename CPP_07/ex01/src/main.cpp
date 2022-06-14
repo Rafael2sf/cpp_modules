@@ -1,6 +1,11 @@
 #include "Iter.hpp"
-#include "Foo.hpp"
 #include <iomanip>
+
+template < typename T >
+static void foo( T const & _a )
+{
+	std::cout << _a << " ";
+}
 
 int	main(void)
 {

@@ -1,5 +1,5 @@
-#ifndef ARRAY_TPP
-# define ARRAY_TPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <iostream>
 
@@ -54,4 +54,4 @@ class	Array
 		unsigned int	_n;
 };
 
-#endif /* ARRAY_TPP */
+#endif /* ARRAY_HPP */

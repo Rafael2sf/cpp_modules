@@ -1,5 +1,5 @@
-#ifndef MAIN_HPP
-# define MAIN_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 # include <iostream>
 
@@ -23,4 +23,4 @@ T const & min( T const & a, T const & b )
 	return ( a < b ? a : b);
 }
 
-#endif /* MAIN_HPP */
+#endif /* WHATEVER_HPP */

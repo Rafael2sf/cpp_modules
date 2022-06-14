@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Array.tpp"
 #include <iomanip>
 #include <stdlib.h>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -15,8 +15,6 @@ int main(int, char**)
 			int len = a.size();
 			std::cout << "size = " << a.size() << std::endl;
 			std::cout << "<int>[ ";
-			for (int i = 0; i < len ; i++)
-				a[i] = i;
 			for (int i = 0; i < len ; i++)
 				std::cout << a[i] << " ";
 			std::cout << "]" << std::endl;
