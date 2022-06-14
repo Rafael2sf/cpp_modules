@@ -1,6 +1,6 @@
 # PROGRAM #
 
-NAME	=		container
+NAME	=		span
 
 # TERMINAL #
 
@@ -30,7 +30,7 @@ CXXFLAGS=		-Wall -Werror -Wextra -std=c++98
 
 # FILES #
 
-SRCS_	=		main.cpp
+SRCS_	=		main.cpp Span.cpp
 
 SRCS	=		$(addprefix $(_SRC), $(SRCS_))
 OBJS	=		$(patsubst $(_SRC)%.cpp,$(_OBJ)%.o,$(SRCS))
