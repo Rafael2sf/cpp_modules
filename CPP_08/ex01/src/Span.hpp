@@ -13,10 +13,10 @@ class	Span: protected std::list<int>
 		Span & operator=( Span const & );
 		std::size_t getMaxSize( void ) const;
 		void addNumber( int );
+		void addNumbers( std::list<int>::iterator first, std::list<int>::iterator last );
 		long shortestSpan( void ) const;
 		long longestSpan( void ) const;
 		void print( std::ostream & o ) const;
-		//std::insert()
 
 	private:
 		Span( void );

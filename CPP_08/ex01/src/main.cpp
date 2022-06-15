@@ -2,27 +2,49 @@
 #include "Span.hpp"
 #include <stdlib.h>
 
-# define SIZE 10
-
+#define SIZE 42000
 int	main( void )
 {
-	Span x(SIZE);
-
-	//std::cout << x.shortestSpan() << std::endl;
 	srand(time(NULL));
-	for (int i = 0; i < SIZE; i++)
 	{
-		if (rand() % 2)
-			x.addNumber(rand());
-		else
-			x.addNumber(rand() * -1);
+		std::list<int>	a;
+		Span 			b(10);
+
+		try { b.shortestSpan(); } 
+		catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
+		b.addNumber(-42);
+		try { b.longestSpan(); } 
+		catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
+		for (int i = 0; i < 9; i++)
+			a.push_back(rand() % 42);
+		b.addNumbers(a.begin(), a.end());
+
+		std::cout << b << std::endl;
+		try { b.addNumber(42); } 
+		catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
+		try { b.addNumbers(a.begin(), a.end()); std::cout << b; } 
+		catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
+		try { std::cout << "shortestSpan: " << b.shortestSpan() << std::endl; } 
+		catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
+		try { std::cout << "longestSpan: " << b.longestSpan() << std::endl; }
+		 catch ( std::exception & e ) { std::cout << e.what() << std::endl; }
 	}
-	//x.addNumber(rand());
-	Span y = x;
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
-	
-	std::cout << x.shortestSpan() << std::endl;
-	std::cout << x.longestSpan() << std::endl;
+	std::cout << std::endl;
+	{
+		std::list<int>	a;
+		Span 			b(SIZE);
+
+		for (int i = 0; i < SIZE; i++)
+		{
+			if (i % 2)
+				a.push_front(rand());
+			else
+				a.push_front(rand() * -1);
+		}
+		b.addNumbers(a.begin(), a.end());
+		std::cout << "Span size = " << SIZE << std::endl;
+		std::cout << "shortestSpan: " << b.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << b.longestSpan() << std::endl;
+	}
 	return ( 0 );
 }

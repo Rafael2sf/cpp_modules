@@ -37,26 +37,35 @@ std::size_t Span::getMaxSize( void ) const
 void Span::addNumber( int n )
 {
 	if (this->size() >= this->_max_size)
-		throw std::length_error("list maximum size reached");
+		throw std::length_error("span maximum size reached");
 	list<int>::iterator it;
 	if (this->size() > 0)
 	{
 		for (it = this->begin(); it != this->end(); it++)
 		{
-			if (static_cast<long>(*it) > n)
+			if (*it > n)
 				break ;
 		}
-		insert(it, 1, n);
+		this->insert(it, 1, n);
 	}
 	else
 		this->push_front(n);
+}
+
+void Span::addNumbers( std::list<int>::iterator first, std::list<int>::iterator last )
+{
+	long dist = std::distance(first, last);
+	if (dist < 0 || this->size() + dist > this->_max_size)
+		throw std::length_error("range of iterators exceeds span maximum size");
+	this->insert(this->begin(), first, last);
+	this->sort();
 }
 
 long Span::shortestSpan( void ) const
 {
 	if (this->size() < 2)
 		throw std::length_error("not enought elements to calculate shortest span");
-	long	span =				INT64_MAX;
+	long						span = INT64_MAX;
 	list<int>::const_iterator	tmp;
 
 	tmp = this->begin();
