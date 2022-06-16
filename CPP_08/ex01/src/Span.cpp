@@ -55,7 +55,9 @@ void Span::addNumber( int n )
 void Span::addNumbers( std::list<int>::iterator first, std::list<int>::iterator last )
 {
 	long dist = std::distance(first, last);
-	if (dist < 0 || this->size() + dist > this->_max_size)
+	if (dist < 0)
+		return ;
+	if (this->size() + dist > this->_max_size)
 		throw std::length_error("range of iterators exceeds span maximum size");
 	this->insert(this->begin(), first, last);
 	this->sort();

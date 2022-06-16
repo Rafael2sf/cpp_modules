@@ -2,12 +2,9 @@
 # define EASYFIND_HPP
 
 template< typename T >
-long	easyfind( T _haystack, int _needle )
+typename T::iterator	easyfind( T & _haystack, int _needle )
 {
- 	typename T::iterator result = std::find(_haystack.begin(), _haystack.end(), _needle);
-	if (result != _haystack.end())
-		return (std::distance(_haystack.begin(), result) + 1);
-	return (0);
+	return (std::find(_haystack.begin(), _haystack.end(), _needle));
 }
 
 #endif /* EASYFIND_HPP */

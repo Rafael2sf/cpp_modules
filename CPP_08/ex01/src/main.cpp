@@ -42,9 +42,10 @@ int	main( void )
 				a.push_front(rand() * -1);
 		}
 		b.addNumbers(a.begin(), a.end());
+		Span c = b;
 		std::cout << "Span size = " << SIZE << std::endl;
-		std::cout << "shortestSpan: " << b.shortestSpan() << std::endl;
-		std::cout << "longestSpan: " << b.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << c.shortestSpan() << std::endl;
+		std::cout << "longestSpan: " << c.longestSpan() << std::endl;
 	}
 	return ( 0 );
 }
