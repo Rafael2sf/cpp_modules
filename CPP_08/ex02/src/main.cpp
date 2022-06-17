@@ -5,17 +5,18 @@
 
 int main( void )
 {
-	std::deque<int>::iterator t;
 	{
+		std::deque<int>::iterator t;
 		MutantStack<std::string> stack1;
 		stack1.push("1");
 		stack1.push("2");
 		stack1.push("3");
+		stack1.push("4");
+		stack1.push("5");
 
 		std::cout <<"iterator: ";
 		for (MutantStack<std::string>::iterator it = stack1.begin(); it != stack1.end(); it++)
 			std::cout << *it << " ";
-
 
 		std::cout << std::endl;
 		std::cout <<"reverse_iterator: ";

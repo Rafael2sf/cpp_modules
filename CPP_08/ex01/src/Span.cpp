@@ -22,6 +22,7 @@ Span & Span::operator=( Span const & rhs )
 	{
 		for (Span::list<int>::const_reverse_iterator it = rhs.rbegin(); it != rhs.rend(); it++)
 			this->push_front(*it);
+		this->sort();
 	}
 	return (*this);
 }
