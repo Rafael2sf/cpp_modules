@@ -2,7 +2,7 @@
 -- @42 lisbon
 ✅ Finished  
 
-## 💻 Compatibility
+## 💻   - Compatibility
 c++/clang
 
 ## 📝   - Description 
