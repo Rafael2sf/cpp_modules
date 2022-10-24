@@ -2,7 +2,7 @@
 -- @42 lisbon
 ✅ Finished  
 
-# 💻 Compatibility
+## 💻 Compatibility
 c++/clang
 
 ## 📝   - Description 
@@ -14,7 +14,6 @@ C is old and rusty it's time to learn the objected oriented languague c++! Which
 git clone https://github.com/Rafael2sf/minishell.git minishell
 ~~~
 
-#
 ## 🔨   - Build
 
 ~~~c
