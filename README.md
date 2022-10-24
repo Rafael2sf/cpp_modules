@@ -6,7 +6,7 @@
 c++/clang
 
 ## 📝   - Description 
-C is old and rusty it's time to learn the objected oriented languague c++! Which module will provide new topics starting from basic to more complex.
+C is old and rusty it's time to learn the objected oriented languague c++! Which module contains exercise reference to certain topics starting from basics to more complex, at the end of this project you should be able to understand c++ syntax and objected oriented programming
 
 ## ℹ️   - Usage
 
